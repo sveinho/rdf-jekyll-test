@@ -1,0 +1,32 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix an: <http://animals.org/classification/> .
+@prefix ani: <http://animals.org/instance/> .
+
+an:landBorn rdfs:subClassOf an:animal .
+an:birds rdfs:subClassOf an:animal .
+an:swimming rdfs:subClassOf an:animal .
+
+an:4orMoreLimbs rdfs:subClassOf an:landBorn .
+an:walkingUpright rdfs:subClassOf an:4orMoreLimbs .
+
+an:layingEggs rdfs:subClassOf an:birds .
+an:scalyFeets rdfs:subClassOf an:layingEggs .
+an:keratinousScalyFeets rdfs:subClassOf an:scalyFeets .
+
+an:foodFromWater rdfs:subClassOf an:swimming .
+an:waterFiltering rdfs:subClassOf an:foodFromWater .
+an:waterHunting rdfs:subClassOf an:foodFromWater .
+an:landWaterLiving rdfs:subClassOf an:waterHunting .
+
+an:breathingAir rdfs:subClassOf an:foodFromWater .
+
+ani:ape a an:walkingUpright .
+ani:Lizard a an:4orMoreLimbs .
+ani:Lizard a an:keratinousScalyFeets .
+ani:Lizard a an:landWaterLiving .
+ani:Penguins a an:keratinousScalyFeets .
+ani:Penguins a an:landWaterLiving .
+ani:Fish a an:waterHunting .
+ani:Fish a an:waterFiltering .
+ani:Whale a an:breathingAir .
+ani:Whale a an:foodFromWater .
